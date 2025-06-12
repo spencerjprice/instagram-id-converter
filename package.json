@@ -1,0 +1,44 @@
+{
+  "name": "instagram-id-converter",
+  "version": "1.0.0",
+  "description": "Converts Instagram Ids to URL Segments",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.mts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.mts",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format esm --dts",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest",
+    "prepublishOnly": "npm run typecheck && npm run test && npm run build"
+  },
+  "author": "Spencer Price",
+  "license": "MIT",
+  "devDependencies": {
+    "tsup": "^8.5.0",
+    "typescript": "^5.8.3",
+    "vitest": "^3.2.3"
+  },
+  "dependencies": {
+    "bignumber.js": "^9.1.2"
+  },
+  "keywords": [
+    "instagram",
+    "id",
+    "converter",
+    "url"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/spencerjprice/instagram-id-converter"
+  }
+}
